@@ -37,3 +37,19 @@ const jsUser2={
 }
 
 console.log(jsUser2)        //output -->{ name: 'Gagan', mySym1: 'new key 1', [Symbol(key2)]: 'new key 2' }
+
+//functions in objects
+
+jsUser2.greetingOne=function(){
+    console.log("hello js user")
+}
+
+jsUser2.greetingTwo=function(){
+    console.log(`Hello js user ${this.name}`)         //this keyword refer to this function only ,means it access the keys of the function jsuser2, not the jsUser1
+}
+
+//How to access the functions described in side the object
+
+console.log("function 1-->",jsUser2.greetingOne)    // this refere to the functions reference only, function 1--> [Function (anonymous)]
+
+console.log("function 2-->",jsUser2.greetingTwo())      //output :Hello js user Gagan
