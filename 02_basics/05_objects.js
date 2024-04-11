@@ -22,4 +22,4 @@ console.log(Object.entries(userDetail))        //it returns array of keys and va
 
 console.log("has own property-->",userDetail.hasOwnProperty("name"))    //returns true
 
-console.log("has own property-->",userDetail.hasOwnProperty("phone number))    //returns false
+console.log("has own property-->",userDetail.hasOwnProperty("phone number"))    //returns false
