@@ -33,3 +33,13 @@ user.welcomeMessage()      //now the output for this method calling is below
 //   price: 999,
 //   welcomeMessage: [Function: welcomeMessage]
 // }
+
+
+function chai(){
+    console.log(this)       // it return numbers of thing like global etc....
+
+    //but
+
+    let username="gagan"
+    console.log(this.username); //it returns undefined, this is not working inside the function scope, its just working for object scope
+}
