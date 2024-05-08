@@ -57,4 +57,4 @@ arr.forEach((num)=>
         }
         })
 
-        console.log("another array-->",anotherArray)
+        console.log("another array-->",anotherArray)  //output:-another array--> [ 6, 7, 8, 9, 10 ]
