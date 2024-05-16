@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    <script>
+        //1. by using innerHtml its very basic , it treverse the whole tree when add text at the last, so when there is no of list items then it has to treverse the all items to append the new li. which is not a very efficient way.
+       function addLanguage(lang){
+       const newLi=document.createElement("li")
+       newLi.innerHTML=lang
+       document.querySelector(".language").appendChild(newLi)        
+       }
+       addLanguage("python")
+       let nextLang="Node"
+       addLanguage(nextLang)
+
+       //2. 2nd way to add element by DSA by adding createTextNode , which is optimize way to add element at the end without treversing the whole tree.
+
+       function addOptimizeLang(lang){
+        const newLi=document.querySelector(".language")
+        const li=document.createElement('li')
+
+        //create text node 
+        const addText=document.createTextNode(lang)
+
+        //add text to li item
+        li.appendChild(addText)
+
+        //add li to ul
+        newLi.appendChild(li)
+        
+        //or directly in below type without creating a addText varriable
+        /**
+         * const li=document.createElement("li")
+         * li.appendChild(document.createTextNode(lang))
+         * document.querySelector('.language').appendChild(li)
+        */
+       }
+
+       addOptimizeLang("optimize C")
+
+
+       //Edit the li element by using replaceWith()
+
+       const secondLi=document.querySelector("li:nth-child(2)")
+       console.log("secondLi-->",secondLi)
+       const newLang=document.createTextNode("Ai")
+       console.log("newLang-->",newLang)
+
+       const li=document.createElement("li")
+       li.appendChild(newLang)
+       console.log("li-->",li)
+       secondLi.replaceWith(li)
+
+       //remove element
+
+       const lastLi=document.querySelector("li:last-child")
+       lastLi.remove()
+
+
+    </script>
+</body>
+</html>
