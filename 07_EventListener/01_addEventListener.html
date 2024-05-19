@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <ul id="parent">
+            <li id="child 1" class="button"><button>Child 1</button></li>
+            <li id="child 2"><button>Child 2</button></li>
+            <li id="child 3"><button>Child 3</button></li>
+            <li id="child 4"><button>Child 4</button></li>
+            <li id="child 5"><button>Child 5</button></li>
+        </ul>
+    </div>
+</body>
+<script> 
+// here by default 3rd parameter is false, event bubbling is working  when click on child 1 button then first child 1 event run and then parent event
+
+const eventBubbling=document.getElementById("parent")
+eventBubbling.addEventListener("click",function(e){
+    console.log("i am in parent")
+})
+
+document.getElementById("child 1").addEventListener("click",function(e){
+    console.log("i am in child 1")
+})
+
+//output : i am in child
+        //i am in parent
+
+// here 3rd parameter is true, event capturing is working  when click on child 2 button then first  parent event and then child 2 event
+
+const eventCapturing=document.getElementById("parent")
+eventCapturing.addEventListener("click",function(e){
+    console.log("i am in parent")
+},true)
+document.getElementById("child 2").addEventListener("click",function(e){
+    console.log("i am in child 2")
+},true)
+
+//output : i am in parent
+        //i am in child 2
+
+</script>
+</html>
