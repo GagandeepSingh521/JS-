@@ -26,16 +26,16 @@
 
         //1st method
         
-        console.log(e.target.tagName)
+        console.log(e)
         //here we need to apply check other wise whenever click on li it will select the parent node ul and remove the ul which contains all the li. 
         if(e.target.tagName=="BUTTON"){
         let removeIt=e.target.parentNode
         removeIt.remove()
         }
         //2nd method
-
+        // if(e.target.tagName=="BUTTON"){
         // removeIt.parentNode.removeChild(removeIt)
-        
+        // }
     })
 </script>
 </html>
