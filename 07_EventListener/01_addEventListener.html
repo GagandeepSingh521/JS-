@@ -17,7 +17,7 @@
     </div>
 </body>
 <script> 
-// here by default 3rd parameter is false, event bubbling is working  when click on child 1 button then first child 1 event run and then parent event
+// here by default 3rd parameter is false, event propegation bubbling up is working  when click on child 1 button then first child 1 event run and then parent event
 
 const eventBubbling=document.getElementById("parent")
 eventBubbling.addEventListener("click",function(e){
@@ -43,6 +43,12 @@ document.getElementById("child 2").addEventListener("click",function(e){
 
 //output : i am in parent
         //i am in child 2
+
+
+
+        // if we want to stop propagation , means just want to click event only perticular element on which we click , so that it doesnt effect the parent , then e.stopPropagation is used
+
+        //with this only child event function will execute, not the parent as in upper examples 
 
 </script>
 </html>
