@@ -1,32 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1><button id="start">Start</button></h1>
     <h1><button id="stop">Stop</button></h1>
-    
+
     <script>
-        
-        const start=()=>{
-            console.log("hello i am in start")
-        }
-      
+        // 1st
 
-      
+      //     const start=()=>{
+      //         console.log("hello i am in start")
+      //     }
 
-        document.querySelector('#start').addEventListener("click",function(){
-            const startInterval=setInterval(start,1000)
-        })
-        document.querySelector('#stop').addEventListener("click",function(){
-           
-        clearInterval(startInterval)
-        console.log("clear")
-        
-        })
+      //   let startInterval=""
+
+      //     document.querySelector('#start').addEventListener("click",function(){
+      //          startInterval=setInterval(start,1000)
+
+      //     })
+      //     document.querySelector('#stop').addEventListener("click",function(){
+
+      //     clearInterval(startInterval)
+      //     console.log("clear")
+
+      //     })
+
+      //2nd
+
+      // document.querySelector("#start").addEventListener("click", function () {
+      //     const start = function () {
+      //       console.log("Rushi", Date.now());
+      //     };
+      //     const toStop = setInterval(start, 1000, (click = start));
+
+      //     document.querySelector("#stop").addEventListener("click", function () {
+      //       clearInterval(toStop);
+      //     });
+      //   });
+
+      //3rd
+
+      //     document.querySelector("#start").addEventListener("click", function () {
+
+      //     const start = function () {
+      //         console.log("Rushi", Date.now());
+      //     };
+      //     const toStop = setInterval(start, 1000);
+      //     document.querySelector("#stop").addEventListener("click", function () {
+      //         clearInterval(toStop);
+      //     }, { once: true });
+      // });
     </script>
-</body>
+  </body>
 </html>
