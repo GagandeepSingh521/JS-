@@ -12,22 +12,26 @@
     <script>
         // 1st
 
-      //     const start=()=>{
-      //         console.log("hello i am in start")
-      //     }
+          const start=()=>{
+              console.log("hello i am in start")
+          }
 
-      //   let startInterval=""
+        let startInterval;
 
-      //     document.querySelector('#start').addEventListener("click",function(){
-      //          startInterval=setInterval(start,1000)
+          document.querySelector('#start').addEventListener("click",function(){
+            if(!startInterval){
 
-      //     })
-      //     document.querySelector('#stop').addEventListener("click",function(){
+              startInterval=setInterval(start,1000)
+            }
 
-      //     clearInterval(startInterval)
-      //     console.log("clear")
+          })
+          document.querySelector('#stop').addEventListener("click",function(){
 
-      //     })
+          clearInterval(startInterval)
+          startInterval=null
+          console.log("clear")
+
+          })
 
       //2nd
 
