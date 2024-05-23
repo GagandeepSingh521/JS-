@@ -5,22 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: #212121;">
+    <h1><button id="download">Download</button></h1>
+
     
 </body>
 <script>
     const reuestUrl="https://api.github.com/users/hiteshchoudhary"
-
+    let data;
     const xhr=new XMLHttpRequest()
     xhr.open('GET',reuestUrl)
     xhr.onreadystatechange=function(){
 
         console.log("xhr-->",xhr.readyState);
         if(xhr.readyState==4){
-            const data=JSON.parse(this.responseText)
-            console.log("data-->",data.followers)
+             data=JSON.parse(this.responseText)
+            console.log("data-->",data)
+            
         }
     }
     xhr.send()
+    document.getElementById("download").addEventListener("click",(e)=>{
+console.log("data--->",data)
+if(Object.keys(data)?.length>0){
+    let newDiv=document.createElement('div')
+    let img=document.createElement("img")
+    let h1=document.createElement("h1")
+    let followers=document.createTextNode(data.followers)
+    img.setAttribute("src",data.avatar_url)
+    newDiv.setAttribute("className","card")
+h1.innerHTML=data.followers
+    newDiv.appendChild(img)
+    newDiv.appendChild(h1)
+    console.log("h1-->",h1)
+    document.body.appendChild(newDiv)
+}
+})
 </script>
 </html>
